@@ -12,6 +12,7 @@ function fetchData() {
 async function displayResult(data) {
     var container = document.getElementById('container');
     container.innerHTML = '';
+    container.classList.add('flex-container'); // 添加 CSS 类
 
     var customOrder = ['cookbookName', 'cookbookDesc', 'cookTime', 'serving', 'chefName'];
 
@@ -32,6 +33,7 @@ async function displayResult(data) {
         container.appendChild(likeInfoElement);
         container.appendChild(rightBlock);
     }
+
 }
 
 
@@ -87,14 +89,7 @@ function createLikeInfoElement(item) {
     return likeInfoElement;
 }
 
-// function createContainer(jsonBlock, likeInfoElement) {
-//     var container = document.createElement('div');
-//     container.classList.add('json-result-container');
-//     container.appendChild(jsonBlock);
-//     container.appendChild(likeInfoElement);
 
-//     return container;
-// }
 
 function getCustomTitle(key) {
     switch (key) {
@@ -161,4 +156,12 @@ function fetchAndDisplayRightBlock(cookbookID, rightBlock) {
             });
         })
         .catch(error => console.error('Error fetching right block data:', error));
+}
+
+function adjustClassPosition(container, ...classes) {
+    // 將類的位置調整到 container 中
+    classes.forEach(className => {
+        var element = container.getElementsByClassName(className)[0];
+        container.insertBefore(element, container.firstChild);
+    });
 }

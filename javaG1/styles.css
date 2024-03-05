@@ -6,15 +6,18 @@
     border-radius: 8px;
     padding: 20px;
     margin: 20px;
-    margin-left: -20px; /* 調整左邊邊距 */
+    margin-left: -20px;
+    /* 調整左邊邊距 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 垂直對齊方式設置為起點對齊 */
+    align-items: center;
+    /* 垂直對齊方式設置為起點對齊 */
     justify-content: center;
     text-align: center;
-    width: 98%; /* 調整左右兩邊寬度百分比 */
+    width: 98%;
+    /* 調整左右兩邊寬度百分比 */
     box-sizing: border-box;
     margin-bottom: 10px;
 }
@@ -60,24 +63,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row; /* 水平排列 */
-    margin-bottom: 20px; /* 增加底邊距，使查詢結果顯示時不會與查詢框貼緊 */
+    flex-direction: row;
+    /* 水平排列 */
+    margin-bottom: 20px;
+    /* 增加底邊距，使查詢結果顯示時不會與查詢框貼緊 */
 }
 
 #categorySelect,
 #queryInput,
 button {
-    margin: 10px; /* 調整邊距 */
+    margin: 10px;
+    /* 調整邊距 */
 }
 
 .block-separator {
-    width: 100%; /* 設置線的寬度為區塊的寬度 */
-    border-top: 1px solid #ddd; /* 適應你的風格設計 */
-    margin-top: 10px; /* 設置上方間距，根據需求調整 */
+    width: 100%;
+    /* 設置線的寬度為區塊的寬度 */
+    border-top: 1px solid #ddd;
+    /* 適應你的風格設計 */
+    margin-top: 10px;
+    /* 設置上方間距，根據需求調整 */
 }
 
 
-
+.flex-container {
+    display: flex;
+}
 
 #container {
     display: flex;
@@ -92,7 +103,8 @@ button {
 .right-block {
     width: 48%;
     box-sizing: border-box;
-    margin-left: 2%;
+    margin-left: auto;
+    /* 将 rightBlock 推到右边 */
     display: flex;
     flex-direction: column;
 }
