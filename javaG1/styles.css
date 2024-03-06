@@ -1,5 +1,5 @@
 /* styles.css */
-
+.chef-block,
 .json-container {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -22,21 +22,44 @@
     margin-bottom: 10px;
 }
 
+.chef-block .block-separator {
+    margin: 0.8px 0; /* 調整內容元素的上下間距，值根據需求調整 */
+    border: 10px;
+}
+
 img {
     max-width: 100%;
-    /* 使图像宽度自适应到其容器的宽度 */
     height: auto;
-    /* 保持图像比例，高度自适应 */
     display: block;
-    /* 移除底部的空隙 */
     margin: 0 auto;
-    /* 图像居中显示 */
+}
+
+/* 圖片樣式 */
+#mainImage {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    opacity: 0.8; /* 這裡的值可以調整，1 是完全不透明，0 是完全透明 */
+}
+
+/* 圓角長方形樣式 */
+.rounded-rectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; /* 寬度 */
+    height: 60px; /* 高度 */
+    background-color: rgba(255, 255, 255, 0.8); /* 這裡使用 rgba() 設定底色，可以調整透明度 */
+    border-radius: 15px; /* 圓角半徑 */
+    z-index: 1; /* 確保圓角長方形在其他元素上方 */
 }
 
 .title {
     font-size: 18px;
     font-weight: bold;
     color: #1a73e8;
+    text-align: center;
 }
 
 .content {
@@ -49,23 +72,33 @@ img {
     justify-content: space-between;
 }
 
+.left-block .chef-block,
+.left-block .json-container {
+    max-width: 100%; /* 最大寬度 100% */
+    margin: 0 auto; /* 自動居中 */
+}
+
+
 .tag {
     flex: 1;
     margin: 0 10px;
-    border: 1px solid #ddd;
+    border: 2px solid #777441;
     border-radius: 8px;
     padding: 10px;
 }
 
 .tag .title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: #1a73e8;
+    align-items: center;
 }
 
 .tag .content {
-    font-size: 14px;
-    color: #4caf50;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fd0000;
+    text-align: center; /* 將文字內容置中 */
 }
 
 #searchForm {
@@ -77,6 +110,11 @@ img {
     /* 水平排列 */
     margin-bottom: 20px;
     /* 增加底邊距，使查詢結果顯示時不會與查詢框貼緊 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* 確保查詢表單在其他元素上方 */
 }
 
 #categorySelect,
@@ -98,28 +136,45 @@ button {
 
 .flex-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 20px auto; /* 上下置中 */
 }
 
 #container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center; /* 置中 */
     max-width: 900px;
-    margin: 20px 0;
-    flex-direction: row-reverse;
-    position: relative;
+    margin: 20px auto; /* 上下置中 */
+
 }
 
+.left-block,
 .right-block {
-    width: 48%;
+    width: 48%;  /* 區塊寬度 */
     box-sizing: border-box;
-    margin-left: auto;
-    /* 将 rightBlock 推到右边 */
     display: flex;
     flex-direction: column;
+    margin: 0 1%; /*區塊之間的間距*/
+    /* border: 1px solid #ddd; 加上區塊邊框 */
+    padding: 10px; /* 添加內部間距 */
+    border-top: 11px solid #ffeb3b; /* 在上緣添加邊框 */
+    border-bottom: 1px solid #ffeb3b; /* 在下緣添加邊框 */
 }
 
 #resultArea {
     width: 48%;
     box-sizing: border-box;
+}
+
+.block-separator {
+    width: 100%;
+    border-top: 3px solid #ddd; /* 將顏色改為黃色 (#ffeb3b) */
+    margin: 20px 0; /* 調整上下空白 */
+}
+
+body {
+    background-color: #dde8f1; /* 淺藍色 */
 }
