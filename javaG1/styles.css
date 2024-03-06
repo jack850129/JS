@@ -23,9 +23,15 @@
 }
 
 .chef-block .block-separator {
-    margin: 0.8px 0;
+    margin: 5px 0;
     /* 調整內容元素的上下間距，值根據需求調整 */
     border: 10px;
+}
+
+.ing-block .block-separator {
+    margin: 10px 0;
+    /* 調整內容元素的上下間距，值根據需求調整 */
+    border: 20px;
 }
 
 img {
@@ -44,7 +50,10 @@ img {
     /* 這裡的值可以調整，1 是完全不透明，0 是完全透明 */
 }
 
-
+.parent-container {
+    position: relative;
+    /* 其他樣式設定 */
+}
 
 /* 圓角長方形樣式 */
 .rounded-rectangle {

@@ -12,6 +12,33 @@
 </head>
 
 <body>
+    <div class="parent-container">
+        <!-- 橢圓框底 -->
+        <div class="rounded-rectangle"></div>
+        <div id="searchForm">
+            <label for="categorySelect">查詢選單：</label>
+            <select id="categorySelect">
+                <option value="category">分類</option>
+                <option value="ingredient">食材</option>
+                <option value="cookbook">食譜</option>
+                <option value="chelf">主廚</option>
+            </select>
+
+            <input type="text" id="queryInput" placeholder="輸入名稱">
+
+            <button type="button" onclick="fetchData()">查詢</button>
+        </div>
+        <img src="cus.jpg" alt="首圖" id="mainImage">
+        <div id="container">
+            <div class="right-block"></div>
+            <div class="left-block"></div>
+        </div>
+    </div>
+    <script src="js/search.js"></script>
+</body>
+
+
+<body>
 
     <!-- 橢圓框底 -->
     <div class="rounded-rectangle"></div>
@@ -28,7 +55,7 @@
 
         <button type="button" onclick="fetchData()">查詢</button>
     </div>
-    <img src="cus.jpg" alt="首圖"  id="mainImage">
+    <img src="cus.jpg" alt="首圖" id="mainImage">
     <div id="container">
         <div class="right-block"></div>
         <div class="left-block"></div>
