@@ -43,9 +43,16 @@ async function displayResult(data) {
         var rightBlock = document.createElement('div');
         rightBlock.classList.add('right-block');
 
+
         // 使用 await 等待 fetchAndDisplayRightBlock 完成，並將 rightBlock 添加內容到 right-block 中
         await fetchAndDisplayRightBlock(item.cookbookID, rightBlock);
 
+        // 新增一個區塊來顯示 fetchAndDisplayingBlock 的資料
+        var ingBlock = await createIngBlock(item.cookbookID);
+        rightBlock.appendChild(ingBlock);
+
+        // 使用 insertBefore 方法將 ingBlock 插入到 rightBlock 中的第一個子元素之前
+        rightBlock.insertBefore(ingBlock, rightBlock.firstChild);
         // 將 leftBlock、rightBlock 添加到 container 中
         container.appendChild(leftBlock);
         container.appendChild(rightBlock);
@@ -173,6 +180,51 @@ async function fetchAndDisplayRightBlock(cookbookID, rightBlock) {
     }
 }
 
+async function createIngBlock(cookbookID) {
+    // 創建左側區塊
+    var ingBlock = document.createElement('div');
+    ingBlock.classList.add('ing-block');
+
+    // 使用 fetchAndDisplayChefBlock 取得資料
+    await fetchAndDisplayingBlock(cookbookID, ingBlock);
+
+    return ingBlock;
+}
+
+async function fetchAndDisplayingBlock(cookbookID, ingBlock) {
+    var ingBlockApiUrl = 'http://tejdemo.ddns.net/api/g2/cookbook/ingredients/' + cookbookID;
+
+    try {
+        var response = await fetch(ingBlockApiUrl);
+        var ingBlockData = await response.json();
+
+        var customOrder = ['ingredientDesc'];
+
+        var titleElement = document.createElement('div');
+        titleElement.classList.add('title');
+        titleElement.innerText = '所需食材';
+        ingBlock.appendChild(titleElement);
+
+        ingBlockData.forEach(item => {
+            customOrder.forEach(key => {
+                if (item.hasOwnProperty(key)) {
+                    var blockSeparator = document.createElement('hr');
+                    blockSeparator.classList.add('block-separator');
+
+                    var contentElement = document.createElement('div');
+                    contentElement.classList.add('content');
+                    contentElement.innerText = item[key] || item[key] === 0 ? item[key] : '無';
+
+                    ingBlock.appendChild(blockSeparator);
+                    ingBlock.appendChild(contentElement);
+                }
+            });
+        });
+    } catch (error) {
+        console.error('Error fetching ing block data:', error);
+    }
+}
+
 async function createChefBlock(chefID) {
     // 創建左側區塊
     var chefBlock = document.createElement('div');
@@ -191,22 +243,22 @@ async function fetchAndDisplayChefBlock(chefID, chefBlock) {
         var response = await fetch(chefBlockApiUrl);
         var chefBlockData = await response.json();
 
-        var customOrder = ['chefName','chefAccount','chefDesc','chefLocal'];
+        var customOrder = ['chefName', 'chefAccount', 'chefDesc', 'chefLocal'];
 
         chefBlockData.forEach(item => {
             customOrder.forEach(key => {
                 if (item.hasOwnProperty(key)) {
                     var blockSeparator = document.createElement('hr');
                     blockSeparator.classList.add('block-separator');
-        
+
                     var titleElement = document.createElement('div');
                     titleElement.classList.add('title');
                     titleElement.innerText = getCustomTitle(key);
-        
+
                     var contentElement = document.createElement('div');
                     contentElement.classList.add('content');
                     contentElement.innerText = item[key] || item[key] === 0 ? item[key] : '無';
-        
+
                     chefBlock.appendChild(blockSeparator);
                     chefBlock.appendChild(titleElement);
                     chefBlock.appendChild(contentElement);

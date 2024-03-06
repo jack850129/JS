@@ -23,7 +23,8 @@
 }
 
 .chef-block .block-separator {
-    margin: 0.8px 0; /* 調整內容元素的上下間距，值根據需求調整 */
+    margin: 0.8px 0;
+    /* 調整內容元素的上下間距，值根據需求調整 */
     border: 10px;
 }
 
@@ -39,8 +40,11 @@ img {
     width: 100%;
     max-width: 100%;
     height: 400px;
-    opacity: 0.8; /* 這裡的值可以調整，1 是完全不透明，0 是完全透明 */
+    opacity: 0.8;
+    /* 這裡的值可以調整，1 是完全不透明，0 是完全透明 */
 }
+
+
 
 /* 圓角長方形樣式 */
 .rounded-rectangle {
@@ -48,11 +52,16 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px; /* 寬度 */
-    height: 60px; /* 高度 */
-    background-color: rgba(255, 255, 255, 0.8); /* 這裡使用 rgba() 設定底色，可以調整透明度 */
-    border-radius: 15px; /* 圓角半徑 */
-    z-index: 1; /* 確保圓角長方形在其他元素上方 */
+    width: 500px;
+    /* 寬度 */
+    height: 60px;
+    /* 高度 */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* 這裡使用 rgba() 設定底色，可以調整透明度 */
+    border-radius: 15px;
+    /* 圓角半徑 */
+    z-index: 1;
+    /* 確保圓角長方形在其他元素上方 */
 }
 
 .title {
@@ -74,8 +83,10 @@ img {
 
 .left-block .chef-block,
 .left-block .json-container {
-    max-width: 100%; /* 最大寬度 100% */
-    margin: 0 auto; /* 自動居中 */
+    max-width: 100%;
+    /* 最大寬度 100% */
+    margin: 0 auto;
+    /* 自動居中 */
 }
 
 
@@ -98,7 +109,8 @@ img {
     font-size: 18px;
     font-weight: bold;
     color: #fd0000;
-    text-align: center; /* 將文字內容置中 */
+    text-align: center;
+    /* 將文字內容置中 */
 }
 
 #searchForm {
@@ -114,7 +126,8 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* 確保查詢表單在其他元素上方 */
+    z-index: 2;
+    /* 確保查詢表單在其他元素上方 */
 }
 
 #categorySelect,
@@ -139,29 +152,37 @@ button {
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 900px;
-    margin: 20px auto; /* 上下置中 */
+    margin: 20px auto;
+    /* 上下置中 */
 }
 
 #container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* 置中 */
+    justify-content: center;
+    /* 置中 */
     max-width: 900px;
-    margin: 20px auto; /* 上下置中 */
+    margin: 20px auto;
+    /* 上下置中 */
 
 }
 
 .left-block,
 .right-block {
-    width: 48%;  /* 區塊寬度 */
+    width: 48%;
+    /* 區塊寬度 */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin: 0 1%; /*區塊之間的間距*/
+    margin: 0 1%;
+    /*區塊之間的間距*/
     /* border: 1px solid #ddd; 加上區塊邊框 */
-    padding: 10px; /* 添加內部間距 */
-    border-top: 11px solid #ffeb3b; /* 在上緣添加邊框 */
-    border-bottom: 1px solid #ffeb3b; /* 在下緣添加邊框 */
+    padding: 10px;
+    /* 添加內部間距 */
+    border-top: 11px solid #ffeb3b;
+    /* 在上緣添加邊框 */
+    border-bottom: 1px solid #ffeb3b;
+    /* 在下緣添加邊框 */
 }
 
 #resultArea {
@@ -171,10 +192,13 @@ button {
 
 .block-separator {
     width: 100%;
-    border-top: 3px solid #ddd; /* 將顏色改為黃色 (#ffeb3b) */
-    margin: 20px 0; /* 調整上下空白 */
+    border-top: 3px solid #ddd;
+    /* 將顏色改為黃色 (#ffeb3b) */
+    margin: 20px 0;
+    /* 調整上下空白 */
 }
 
 body {
-    background-color: #dde8f1; /* 淺藍色 */
+    background-color: #dde8f1;
+    /* 淺藍色 */
 }
