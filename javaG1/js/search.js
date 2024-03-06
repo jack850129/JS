@@ -133,23 +133,24 @@ function fetchAndDisplayRightBlock(cookbookID, rightBlock) {
     return fetch(rightBlockApiUrl)
         .then(response => response.json())
         .then(rightBlockData => {
+            var customOrder = ['stepDesc'];
+            var titleElement = document.createElement('div');
+            titleElement.classList.add('title');
+            titleElement.innerText = '食譜步驟';
+            rightBlock.appendChild(titleElement);
             rightBlockData.forEach(item => {
-                var customOrder = ['stepDesc'];
+
                 customOrder.forEach(key => {
                     if (item.hasOwnProperty(key)) {
                         var blockSeparator = document.createElement('hr');
                         blockSeparator.classList.add('block-separator');
 
-                        var titleElement = document.createElement('div');
-                        titleElement.classList.add('title');
-                        titleElement.innerText = '食譜步驟';
-
                         var contentElement = document.createElement('div');
                         contentElement.classList.add('content');
                         contentElement.innerText = item[key] || item[key] === 0 ? item[key] : '無';
 
+
                         rightBlock.appendChild(blockSeparator);
-                        rightBlock.appendChild(titleElement);
                         rightBlock.appendChild(contentElement);
                     }
                 });

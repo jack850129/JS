@@ -22,6 +22,16 @@
     margin-bottom: 10px;
 }
 
+img {
+    max-width: 100%;
+    /* 使图像宽度自适应到其容器的宽度 */
+    height: auto;
+    /* 保持图像比例，高度自适应 */
+    display: block;
+    /* 移除底部的空隙 */
+    margin: 0 auto;
+    /* 图像居中显示 */
+}
 
 .title {
     font-size: 18px;
@@ -31,7 +41,7 @@
 
 .content {
     font-size: 16px;
-    color: #4caf50;
+    color: #000000;
 }
 
 .like-info {
